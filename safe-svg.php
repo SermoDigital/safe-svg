@@ -8,6 +8,7 @@ Author:      Daryll Doyle
 Author URI:  http://enshrined.co.uk
 Text Domain: safe-svg
 Domain Path: /languages
+GitHub Plugin URI: SermoDigital/safe-svg
  */
 
 defined( 'ABSPATH' ) or die( 'Really?' );
