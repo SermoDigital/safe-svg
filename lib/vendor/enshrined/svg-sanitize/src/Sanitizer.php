@@ -246,7 +246,9 @@ class Sanitizer
     protected function setUpBefore()
     {
         // Turn off the entity loader
-        // $this->xmlLoaderValue = libxml_disable_entity_loader(true);
+        if (function_exists('libxml_disable_entity_loader')) {
+            $this->xmlLoaderValue = libxml_disable_entity_loader(true);
+        }
 
         // Suppress the errors because we don't really have to worry about formation before cleansing
         libxml_use_internal_errors(true);
@@ -261,7 +263,9 @@ class Sanitizer
     protected function resetAfter()
     {
         // Reset the entity loader
-        //libxml_disable_entity_loader($this->xmlLoaderValue);
+        if (function_exists('libxml_disable_entity_loader')) {
+            libxml_disable_entity_loader($this->xmlLoaderValue);
+        }
     }
 
     /**
